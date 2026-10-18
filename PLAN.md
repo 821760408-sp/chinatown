@@ -43,10 +43,12 @@ interactive apps), **Eleventy** (great, but less built-in structure for islands)
 - [x] Create the GitHub repo and push — https://github.com/821760408-sp/chinatown
 - [x] Turn on Pages (source: GitHub Actions) — live at https://821760408-sp.github.io/chinatown/
 
-## Phase 2 — Content & design
-- Write the real home/about copy, add 3–6 portfolio projects with images.
-- Move or write the first few posts; set up the RSS feed and tags.
-- Pick a typeface and colour palette; add dark mode and a 404 page.
+## Phase 2 — Web 1.0 redesign & 2026 Music Retro
+Full plan: **[PHASE-2.md](PHASE-2.md)**
+- Restyle the site as a ca. 2000 personal homepage (each region gets its own look).
+- Turn `/` into a front door linking to "regions" (sub-projects).
+- First region: a 2026 music retrospective with writing and listening links.
+- Move Work / Writing / Apps into regions (`/work/`, `/writing/`, `/lab/`).
 
 ## Phase 3 — Domain & polish
 - Buy a domain (any registrar; Porkbun / Cloudflare Registrar are cheap), point it at
