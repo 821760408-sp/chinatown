@@ -40,8 +40,8 @@ interactive apps), **Eleventy** (great, but less built-in structure for islands)
 - [x] `git init`, `.gitignore`, first commit
 - [x] Scaffold Astro with home, portfolio, writing and apps sections
 - [x] GitHub Actions workflow for Pages
-- [ ] Create the GitHub repo and push (needs your go-ahead: public vs. private)
-- [ ] Turn on Pages (Settings → Pages → Source: GitHub Actions) and confirm the live URL
+- [x] Create the GitHub repo and push — https://github.com/821760408-sp/my-site
+- [x] Turn on Pages (source: GitHub Actions) — live at https://821760408-sp.github.io/my-site/
 
 ## Phase 2 — Content & design
 - Write the real home/about copy, add 3–6 portfolio projects with images.
