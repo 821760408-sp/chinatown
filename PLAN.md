@@ -40,8 +40,8 @@ interactive apps), **Eleventy** (great, but less built-in structure for islands)
 - [x] `git init`, `.gitignore`, first commit
 - [x] Scaffold Astro with home, portfolio, writing and apps sections
 - [x] GitHub Actions workflow for Pages
-- [x] Create the GitHub repo and push — https://github.com/821760408-sp/my-site
-- [x] Turn on Pages (source: GitHub Actions) — live at https://821760408-sp.github.io/my-site/
+- [x] Create the GitHub repo and push — https://github.com/821760408-sp/chinatown
+- [x] Turn on Pages (source: GitHub Actions) — live at https://821760408-sp.github.io/chinatown/
 
 ## Phase 2 — Content & design
 - Write the real home/about copy, add 3–6 portfolio projects with images.

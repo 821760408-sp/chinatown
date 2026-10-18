@@ -1,4 +1,4 @@
-# my-site
+# chinatown
 
 Personal website: portfolio, writing, and small web apps. Built with [Astro](https://astro.build),
 deployed to GitHub Pages. See [PLAN.md](PLAN.md) for the roadmap.
