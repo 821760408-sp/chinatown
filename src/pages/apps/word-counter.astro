@@ -1,0 +1,41 @@
+---
+// Example app: a plain <script> island. Astro bundles it and only loads it on this page.
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/site';
+---
+
+<Base title="Word counter" description="Count words, characters and reading time.">
+  <p class="meta"><a href={url('/apps/')}>← Apps</a></p>
+  <h1>Word counter</h1>
+  <div class="card">
+    <label for="wc-input" class="meta">Paste or type some text</label>
+    <textarea id="wc-input" rows="8"></textarea>
+    <p class="meta" id="wc-output" aria-live="polite">0 words · 0 characters · 0 min read</p>
+  </div>
+</Base>
+
+<style>
+  textarea {
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    font: inherit;
+    color: inherit;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    resize: vertical;
+  }
+</style>
+
+<script>
+  const input = document.querySelector<HTMLTextAreaElement>('#wc-input')!;
+  const output = document.querySelector<HTMLParagraphElement>('#wc-output')!;
+
+  input.addEventListener('input', () => {
+    const text = input.value.trim();
+    const words = text ? text.split(/\s+/).length : 0;
+    const minutes = Math.ceil(words / 230);
+    output.textContent = `${words} words · ${input.value.length} characters · ${minutes} min read`;
+  });
+</script>

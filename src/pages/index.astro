@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import { formatDate, url } from '../lib/site';
+
+const projects = (await getCollection('projects'))
+  .sort((a, b) => Number(b.data.featured) - Number(a.data.featured) || b.data.year - a.data.year)
+  .slice(0, 3);
+const posts = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 3);
+---
+
+<Base>
+  <h1>Hi, I'm Chinatown.</h1>
+  <p class="lede">
+    This is my corner of the web: things I've made, things I've written, and the odd small app.
+  </p>
+
+  <h2>Selected work</h2>
+  <ul class="list">
+    {projects.map((p) => (
+      <li>
+        <a href={url(`/projects/${p.id}/`)}>{p.data.title}</a>
+        <span class="meta"> · {p.data.year}</span>
+        <p>{p.data.summary}</p>
+      </li>
+    ))}
+  </ul>
+  <p><a href={url('/projects/')}>All work →</a></p>
+
+  <h2>Recent writing</h2>
+  <ul class="list">
+    {posts.map((p) => (
+      <li>
+        <a href={url(`/writing/${p.id}/`)}>{p.data.title}</a>
+        <p class="meta">{formatDate(p.data.date)}</p>
+      </li>
+    ))}
+  </ul>
+  <p><a href={url('/writing/')}>All writing →</a></p>
+</Base>

@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/site';
+
+// Add an entry here for each app in src/pages/apps/.
+const apps = [
+  { slug: 'word-counter', title: 'Word counter', summary: 'Count words, characters and reading time.' },
+];
+---
+
+<Base title="Apps" description="Small web apps and experiments.">
+  <h1>Apps</h1>
+  <p class="lede">Small web apps and experiments.</p>
+  <ul class="list">
+    {apps.map((a) => (
+      <li>
+        <a href={url(`/apps/${a.slug}/`)}>{a.title}</a>
+        <p>{a.summary}</p>
+      </li>
+    ))}
+  </ul>
+</Base>

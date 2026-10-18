@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { formatDate, url } from '../../lib/site';
+
+const posts = (await getCollection('writing', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+---
+
+<Base title="Writing" description="Essays, notes, and write-ups.">
+  <h1>Writing</h1>
+  <p class="lede">Essays, notes, and write-ups. <a href={url('/rss.xml')}>Subscribe via RSS</a>.</p>
+  <ul class="list">
+    {posts.map((p) => (
+      <li>
+        <a href={url(`/writing/${p.id}/`)}>{p.data.title}</a>
+        <p class="meta">{formatDate(p.data.date)}</p>
+        <p>{p.data.description}</p>
+      </li>
+    ))}
+  </ul>
+</Base>
